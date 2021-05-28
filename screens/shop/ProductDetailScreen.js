@@ -18,7 +18,7 @@ const ProductDetailScreen = props => {
                     dispatch(cartActions.addToCard(selectedProduct));
                 }} />
             </View>
-            <Text style={styles.price}>{selectedProduct.price.toFixed(2)}</Text>
+            <Text style={styles.price}>${selectedProduct.price.toFixed(2)}</Text>
             <Text style={styles.description}>{selectedProduct.description}</Text>
         </ScrollView>
     );
