@@ -61,6 +61,7 @@ export default (state = initialState, action) => {
             };
         case ADD_ORDER:
             return initialState;
+            
         case DELETE_PRODUCT:
             if (!state.items[action.pid]) {
                 return state;
