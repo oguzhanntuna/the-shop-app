@@ -1,5 +1,5 @@
-export const ADD_TO_CART = 'ADD_TO_CART';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 
-export const addToCart = product => {
-    return { type: ADD_TO_CART, product: product };
+export const deleteProduct = productId => {
+    return { type: DELETE_PRODUCT, pid: productId };
 };
