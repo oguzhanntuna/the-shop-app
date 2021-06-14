@@ -33,10 +33,11 @@ export const fetchOrders = () => {
 };
 
 export const addOrder = (cartItems, totalAmount) => {
-    return async dispatch => {
+    return async (dispatch, getState) => {
+        const token = getState().auth.token;
         const date = new Date();
         const response = await fetch(
-            'https://the-shop-app-bcf8e-default-rtdb.europe-west1.firebasedatabase.app/orders/u1.json',
+            `https://the-shop-app-bcf8e-default-rtdb.europe-west1.firebasedatabase.app/orders/u1.json?auth=${token}`,
             {
                 method: 'POST',
                 header: {

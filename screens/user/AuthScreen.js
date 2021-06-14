@@ -75,13 +75,18 @@ const AuthScreen = props => {
         setIsLoading(true);
         try {
             await dispatch(action);
+            props.navigation.navigate('Shop');
         } catch (err) {
             setError(err.message);
+            setIsLoading(false);
         }
-        setIsLoading(false);
     }
 
-    const inputChangeHandler = useCallback((inputIdentifier, inputValue, inputValidity) => {
+    const inputChangeHandler = useCallback((
+        inputIdentifier, 
+        inputValue, 
+        inputValidity
+    ) => {
         dispatchFormState({
             type: FORM_INPUT_UPDATE,
             value: inputValue,
